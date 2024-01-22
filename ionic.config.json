@@ -1,0 +1,7 @@
+{
+  "name": "binderIT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
