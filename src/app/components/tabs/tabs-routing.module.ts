@@ -9,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: () => import('../pages/dashboard/dashboard.module').then(m => m.DashboardPageModule)
+        loadChildren: () => import('../../pages/dashboard/dashboard.module').then(m => m.DashboardPageModule)
       },
       {
         path: 'cart',
-        loadChildren: () => import('../pages/cart/cart.module').then(m => m.CartPageModule)
+        loadChildren: () => import('../../pages/cart/cart.module').then(m => m.CartPageModule)
       },
       {
         path: 'wish',
-        loadChildren: () => import('../pages/wish/wish.module').then(m => m.WishPageModule)
+        loadChildren: () => import('../../pages/wish/wish.module').then(m => m.WishPageModule)
       },
       {
         path: '',
