@@ -5,13 +5,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./components/tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
-    path: 'course',
-    loadChildren: () => import('./pages/course/course.module').then( m => m.CoursePageModule)
+  },
+  {
+    path: 'course/:id',
+    loadChildren: () => import('./pages/course/course.module').then(m => m.CoursePageModule)
   },
   {
     path: 'profile',
-    loadChildren: () => import('./modals/profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./modals/profile/profile.module').then(m => m.ProfilePageModule)
   }
 
 ];
