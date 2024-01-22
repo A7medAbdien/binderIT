@@ -6,6 +6,7 @@ import { DashboardPage } from './dashboard.page';
 import { ExploreContainerComponentModule } from '../../components/explore-container/explore-container.module';
 
 import { DashboardPageRoutingModule } from './dashboard-routing.module';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { DashboardPageRoutingModule } from './dashboard-routing.module';
     ExploreContainerComponentModule,
     DashboardPageRoutingModule
   ],
-  declarations: [DashboardPage]
+  declarations: [HeaderComponent, DashboardPage]
 })
 export class DashboardPageModule { }
