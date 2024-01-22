@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CartPage } from './cart.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { WishPage } from './wish.page';
+import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { CartPageRoutingModule } from './cart-routing.module';
+import { WishPageRoutingModule } from './wish-routing.module';
 
 @NgModule({
   imports: [
@@ -13,8 +13,8 @@ import { CartPageRoutingModule } from './cart-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    CartPageRoutingModule
+    WishPageRoutingModule
   ],
-  declarations: [CartPage]
+  declarations: [WishPage]
 })
-export class CartPageModule { }
+export class WishPageModule { }

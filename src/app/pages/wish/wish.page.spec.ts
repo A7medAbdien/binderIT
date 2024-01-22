@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { CartPage } from './cart.page';
+import { WishPage } from './wish.page';
 
-describe('CartPage', () => {
-  let component: CartPage;
-  let fixture: ComponentFixture<CartPage>;
+describe('WishPage', () => {
+  let component: WishPage;
+  let fixture: ComponentFixture<WishPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CartPage],
+      declarations: [WishPage],
       imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CartPage);
+    fixture = TestBed.createComponent(WishPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
