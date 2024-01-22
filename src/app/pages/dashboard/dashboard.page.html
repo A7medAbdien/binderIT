@@ -1,7 +1,22 @@
-<app-header title="Dashboard" [isDashboard]="false"></app-header>
+<app-header title="Dashboard" [isDashboard]="true" [isSearchOpen]="isSearchOpen"
+  [isOrderOpen]="isOrderOpen"></app-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngFor="let course of courseList">
-    <app-dashboard-card [course]="course" />
-  </div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="start">
+      <ion-fab-button [color]="orderButtonColor" (click)="toggleOrder()">
+        <ion-icon name="filter-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button [color]="searchButtonColor" (click)="toggleSearch()">
+        <ion-icon name="search"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+  </ion-fab>
+
+  <app-dashboard-card *ngFor="let course of courseList" [course]="course" />
 </ion-content>

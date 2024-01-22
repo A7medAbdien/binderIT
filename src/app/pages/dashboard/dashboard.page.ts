@@ -13,6 +13,12 @@ export class DashboardPage {
   itemsPerPage = 4;
   currentPage = 1;
 
+  isOrderOpen: boolean = false;
+  isSearchOpen: boolean = false;
+
+  orderButtonColor: "" | "warning" = "";
+  searchButtonColor: "" | "warning" = "";
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -60,6 +66,23 @@ export class DashboardPage {
       this.currentPage--;
       this.loadData();
     }
+  }
+
+  toggleOrder() {
+    this.isOrderOpen = !this.isOrderOpen;
+    this.isSearchOpen = false;
+    this.colorButtons();
+  }
+
+  toggleSearch() {
+    this.isSearchOpen = !this.isSearchOpen;
+    this.isOrderOpen = false;
+    this.colorButtons();
+  }
+
+  colorButtons() {
+    this.orderButtonColor = this.isOrderOpen ? "warning" : "";
+    this.searchButtonColor = this.isSearchOpen ? "warning" : "";
   }
 
 }
