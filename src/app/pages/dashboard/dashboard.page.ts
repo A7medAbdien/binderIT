@@ -8,27 +8,58 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['dashboard.page.scss']
 })
 export class DashboardPage {
-  courseList: Course[] | undefined;
+  courseList: Course[] = [];
+  displayedData: Course[] = [];
+  itemsPerPage = 4;
+  currentPage = 1;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.loadData();
+    this.loadDataPaganized();
   }
 
+  // load all data
   loadData() {
     this.dataService.getData().subscribe(
       {
         next: (data) => {
           this.courseList = data;
           console.log(this.courseList);
-
         },
         error: (error) => {
-          console.error('Error loading data', error);
+          console.error('Error loading all data', error);
         }
       }
     );
+  }
+
+  // load paganized data
+  loadDataPaganized() {
+    this.dataService.getDataPaganized(this.currentPage, this.itemsPerPage).subscribe(
+      {
+        next: (data) => {
+          this.displayedData = data;
+          console.log(this.displayedData);
+        },
+        error: (error) => {
+          console.error('Error loading data paganized', error);
+        }
+      }
+    );
+  }
+
+  nextPage() {
+    this.currentPage++;
+    this.loadData();
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.loadData();
+    }
   }
 
 }
