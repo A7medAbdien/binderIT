@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class DashboardPage {
   courseList: Course[] = [];
-  displayedData: Course[] = [];
+  paganizedCourseList: Course[] = [];
   itemsPerPage = 4;
   currentPage = 1;
 
@@ -40,8 +40,8 @@ export class DashboardPage {
     this.dataService.getDataPaganized(this.currentPage, this.itemsPerPage).subscribe(
       {
         next: (data) => {
-          this.displayedData = data;
-          console.log(this.displayedData);
+          this.paganizedCourseList = data;
+          console.log(this.paganizedCourseList);
         },
         error: (error) => {
           console.error('Error loading data paganized', error);
